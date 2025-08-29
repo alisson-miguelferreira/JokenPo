@@ -1,3 +1,11 @@
+// Função para resetar o resultado e as pontuações
+function resetGame() {
+    humanScore = 0; // Zera pontuação do jogador
+    machineScore = 0; // Zera pontuação da Alexa
+    yourScoreElement.innerHTML = humanScore; // Atualiza placar do jogador
+    machineScoreElement.innerHTML = machineScore; // Atualiza placar da Alexa
+    document.getElementById('resultado-input').value = ''; // Limpa o resultado
+}
 // Seleciona os elementos do placar corretamente (sem #)
 const yourScoreElement = document.getElementById('pontuacao-jogador'); // Elemento do placar do jogador
 const machineScoreElement = document.getElementById('pontuacao-alexa'); // Elemento do placar da Alexa

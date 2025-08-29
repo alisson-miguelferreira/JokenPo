@@ -1,4 +1,30 @@
+/* Resultado menor no mobile */
+#resultado-input {
+    font-size: 1.2rem;
+    /* Menor que desktop */
+    min-height: 40px;
+    /* Altura menor */
+    margin-top: 8px;
+    /* Espaço superior maior */
+
+    /* Botão reset menor no mobile */
+    .reset-btn {
+        font-size: 0.9rem;
+        /* Menor que desktop */
+        padding: 6px 14px;
+        /* Padding reduzido */
+        margin-top: 8px;
+        /* Espaço superior maior */
+    }
+}
+
 /* ===============================================
+   📝 NOTAS DE DESENVOLVIMENTO - Informações técnicas
+   ===============================================
+   
+   🎨 PALETA DE CORES UTILIZADA:
+   - He-Man: #FFD700 (dourado), #FF4500 (laranja), #FFA500 (laranja médio)
+   - Skeletor: #4A0E4/* ===============================================
    🏰 HE-MAN VS SKELETOR - ROCK PAPER SCISSORS 🏰
    Epic CSS Theme with Professional Comments
    Version: 15 (Final Professional Edition)
@@ -121,15 +147,15 @@ body::before {
 .container {
     /* Background complexo com múltiplas camadas representando o conflito */
     background: linear-gradient(135deg,
-            rgba(28, 28, 28, 0.80) 0%,
+            rgba(28, 28, 28, 0.95) 0%,
             /* Escuridão profunda */
-            rgba(74, 14, 78, 0.75) 25%,
+            rgba(74, 14, 78, 0.9) 25%,
             /* Poder roxo do Skeletor */
-            rgba(112, 128, 144, 0.70) 50%,
+            rgba(112, 128, 144, 0.85) 50%,
             /* Neutralidade do castelo */
-            rgba(74, 14, 78, 0.75) 75%,
+            rgba(74, 14, 78, 0.9) 75%,
             /* Retorno ao poder roxo */
-            rgba(28, 28, 28, 0.80) 100%);
+            rgba(28, 28, 28, 0.95) 100%);
     /* Volta à escuridão */
 
     border-radius: 20px;
@@ -533,21 +559,28 @@ button:active {
     /* Mantém consistência tipográfica */
 }
 
-/* Pontuação do He-Man */
-/* Estilo dos parágrafos de score igual ao h2 */
-.heman-score,
-.skeletor-score {
-    color: var(--heman-light);
-    font-size: 1.1rem;
-    font-family: 'Cinzel', serif;
+/* Pontuação do jogador (He-Man) */
+.player-score {
+    font-size: 1.2rem;
+    /* Tamanho legível */
+    margin-top: 8px;
+    /* Espaço superior */
     font-weight: 600;
+    /* Semi-bold */
+    color: var(--heman-primary);
+    /* Dourado heroico */
+
+    /* Efeitos de brilho heroicos */
     text-shadow:
-        0 0 12px var(--heman-primary),
-        2px 2px 4px var(--shadow-deep),
-        0 0 8px var(--heman-accent);
-    margin-bottom: 5px;
+        0 0 8px var(--heman-accent),
+        /* Brilho laranja base */
+        1px 1px 3px var(--shadow-deep);
+    /* Sombra de profundidade */
+
     text-align: center;
-    letter-spacing: 1px;
+    /* Centralizado */
+    font-family: 'Cinzel', serif;
+    /* Mantém consistência tipográfica */
 }
 
 /* ===============================================
@@ -555,7 +588,7 @@ button:active {
    =============================================== */
 
 /* Pontuação numérica do Skeletor */
-#pontuacao-skeletor {
+#pontuacao-alexa {
     color: #E6E6FA;
     /* Lavanda claro para alta visibilidade */
     font-size: 1.4rem;
@@ -574,50 +607,40 @@ button:active {
 }
 
 /* Pontuação numérica do He-Man */
-#pontuacao-heman {
+#pontuacao-jogador {
     color: var(--heman-primary);
     /* Dourado heroico */
     font-size: 1.4rem;
     /* Maior que texto normal */
     font-weight: 700;
     /* Bold para destaque */
-}
 
-/* Pontuação do Esqueleto e do He-Man - estilo igual ao h2 */
-.skeletor-score,
-.heman-score {
-
-    /* Pontuação do Esqueleto e do He-Man - estilo igual ao h2 */
-    .skeletor-score,
-    .heman-score {
-        color: var(--heman-light);
-        font-size: 1.1rem;
-        font-family: 'Cinzel', serif;
-        font-weight: 600;
-        text-shadow:
-            0 0 12px var(--heman-primary),
-            2px 2px 4px var(--shadow-deep),
-            0 0 8px var(--heman-accent);
-        margin-bottom: 5px;
-        text-align: center;
-        letter-spacing: 1px;
-    }
+    /* Sistema de brilho heroico */
+    text-shadow:
+        0 0 12px var(--heman-accent),
+        /* Brilho laranja */
+        2px 2px 4px var(--shadow-deep);
+    /* Sombra de profundidade */
 }
 
 /* ===============================================
    🏆 DISPLAY DE RESULTADO - Arena de batalha
    =============================================== */
 #resultado-input {
-    font-size: 1.05rem;
+    font-size: 1.4rem;
     /* Tamanho grande para destaque */
     font-weight: 600;
     /* Semi-bold */
     color: var(--heman-primary);
     /* Dourado para destaque */
+
+    /* Background com gradiente sombrio */
     background: linear-gradient(135deg,
             var(--grayskull-dark) 0%,
             /* Preto profundo */
             rgba(28, 28, 28, 0.9) 100%);
+    /* Cinza escuro translúcido */
+
     border: 2px solid var(--power-glow);
     /* Borda cyan do poder */
     border-radius: 15px;
@@ -626,18 +649,20 @@ button:active {
     /* Espaço superior mínimo */
     text-align: center;
     /* Texto centralizado */
+
+    /* Efeitos de brilho místico */
     box-shadow:
         0 0 20px rgba(0, 255, 255, 0.3),
         /* Brilho externo cyan */
         inset 0 0 10px rgba(0, 255, 255, 0.1);
     /* Brilho interno sutil */
+
     width: 95%;
     /* Quase toda largura do container */
     min-height: 45px;
-    padding: 8px 6px;
-    line-height: 1.25;
-    letter-spacing: 0.5px;
     /* Altura mínima para consistência */
+    padding: 5px;
+    /* Padding interno mínimo */
     font-family: 'Cinzel', serif;
     /* Mantém fonte épica */
     text-shadow: 0 0 8px var(--power-glow);
@@ -654,6 +679,8 @@ button:active {
     /* Espaço superior mínimo */
     padding: 6px 16px;
     /* Padding otimizado */
+
+    /* Gradiente que representa o castelo neutro */
     background: linear-gradient(135deg,
             var(--castle-gray) 0%,
             /* Cinza do castelo */
@@ -661,6 +688,7 @@ button:active {
             /* Escuridão do Skeletor */
             var(--castle-gray) 100%);
     /* Volta ao cinza */
+
     color: var(--heman-primary);
     /* Texto dourado */
     border: 2px solid var(--power-glow);
@@ -675,11 +703,14 @@ button:active {
     /* Semi-bold */
     cursor: pointer;
     /* Cursor de interação */
+
+    /* Sistema de sombras */
     box-shadow:
         0 4px 15px rgba(0, 0, 0, 0.3),
         /* Sombra externa */
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     /* Brilho interno sutil */
+
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     /* Transição suave */
     letter-spacing: 1px;
@@ -810,27 +841,18 @@ button:active {
     }
 
     /* Números da pontuação menores no mobile */
-    #pontuacao-skeletor,
-    #pontuacao-heman {
+    #pontuacao-alexa,
+    #pontuacao-jogador {
         font-size: 1.2rem;
         /* Menor que desktop */
     }
 
     /* Resultado menor no mobile */
     #resultado-input {
-    font-size: 0.95rem;
-    min-height: 38px;
-    margin-top: 8px;
-    color: var(--heman-light);
-    font-family: 'Cinzel', serif;
-    font-weight: 600;
-    text-shadow: 0 0 8px var(--heman-primary);
-    margin-bottom: 5px;
-    text-align: center;
-    letter-spacing: 0.5px;
-    padding: 6px 4px;
-    white-space: normal;
-    overflow-wrap: break-word;
-    word-break: break-word;
+        font-size: 1.2rem;
+        /* Menor que desktop */
+        min-height: 40px;
+        /* Altura menor */
+        margin-top: 8px;
     }
 }

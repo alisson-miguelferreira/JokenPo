@@ -1,36 +1,74 @@
-# Jokenpô
+# ⚔️ JokenPô - He-Man Edition  
 
-Este projeto é um jogo clássico de Jokenpô (Pedra, Papel, Tesoura) desenvolvido em HTML, CSS e JavaScript.
+**“Pelos poderes de Grayskull... EU TENHO A FORÇA!”** 🏰⚡  
 
-## Funcionalidades
-- Jogador escolhe entre Pedra, Papel ou Tesoura
-- Alexa (máquina) faz uma escolha aleatória
-- Resultado da rodada é exibido em um campo de input
-- Placar dinâmico para jogador e Alexa
-- Layout responsivo para todos os dispositivos
+Este é um jogo clássico de **Pedra, Papel e Tesoura**, mas reimaginado no universo de **He-Man e os Mestres do Universo**.  
+Aqui, **você sempre será o He-Man** 🛡️, e seu inimigo eterno será a **máquina, controlando o terrível Esqueleto** 💀.  
 
-## Como usar
-1. **[Clique aqui para jogar Jokenpô online](https://alisson-miguelferreira.github.io/JokenPo/)**
-2. Escolha sua jogada e veja o resultado e o placar atualizado
-
-## Estrutura do projeto
-- `index.html`: Estrutura da página
-- `style.css`: Estilos e responsividade
-- `script.js`: Lógica do jogo
-
-## Tecnologias
-- HTML5
-- CSS3
-- JavaScript
-
-## Autor
-Desenvolvido por Alisson Miguel Ferreira
+A batalha é simples: pedra, papel ou tesoura decidirão o destino de Eternia!  
 
 ---
 
-🤝 Conecte-se comigo
-🔗 <a href="linkedin.com/in/alisson-miguelferreira">LinkedIn</a>
-🐙 <a href="github.com/alisson-miguelferreira">Github</a>
+## 🎮 Demonstração  
+
+<img src="./assets/Jokenpô He-man print.png" alt= "Jokenpo He-man">  
 
 ---
-Sinta-se à vontade para contribuir ou sugerir melhorias!
+
+## ⚔️ Como Jogar  
+
+1. **Você é o He-Man** 🛡️.  
+2. Escolha sua arma do destino: **Pedra**, **Papel** ou **Tesoura**.  
+3. O **Esqueleto (a máquina)** fará sua escolha traiçoeira.  
+4. O resultado aparecerá na tela:  
+   - Vitória do **He-Man** = *“Pelos poderes de Grayskull, a justiça prevaleceu!”* ⚡  
+   - Vitória do **Esqueleto** = *“Você perdeu, tolo! MUAHAHAHA!”* 💀  
+   - Empate = *“Um duelo equilibrado... por enquanto.”* ⚖️  
+5. O placar mostrará quem está dominando a batalha pelo **controle de Eternia**.  
+
+---
+
+## ▶️ Para Jogar
+1. **[Clique aqui para jogar Jokenpô He-Man online](https://alisson-miguelferreira.github.io/JokenPo/)**  
+2. Escolha sua jogada e veja o resultado e o placar atualizado  
+
+---
+
+## 🚀 Tecnologias Utilizadas  
+
+- **HTML5** → Estrutura do jogo  
+- **CSS3** → Estilos personalizados com tema inspirado em He-Man  
+- **JavaScript (ES6+)** → Lógica do jogo, placar dinâmico e interatividade  
+- **Vídeo de fundo** → Ambiente imersivo com loop épico  
+
+---
+
+## 📂 Estrutura do Projeto  
+
+| Arquivo/Pasta | Descrição |
+|---------------|-----------|
+| [📜 index.html](./index.html) | Estrutura principal do jogo |
+| [🎨 style.css](./style.css) | Estilização no tema He-Man |
+| [⚡ script.js](./script.js) | Lógica e placar do jogo |
+| [🖼️ assets/](./assets/) | Imagens, vídeos e mídias (opcional) |
+| [📘 README.md](./README.md) | Documentação do projeto |
+
+---
+
+## 📝 Créditos  
+
+Este jogo foi desenvolvido para **aprimorar habilidades em HTML, CSS e JavaScript**,  
+explorando um tema inspirado em He-Man and the Masters of the Universe (© Mattel).  
+
+Não é um produto oficial, apenas um projeto criativo e experimental.  
+
+---
+
+“Que vença o mais forte! Pois em Eternia, até mesmo um simples jogo de JokenPô pode decidir o destino do universo!” ⚔️  
+
+---
+
+## 🤝 Conecte-se comigo  
+
+🔗 [LinkedIn](https://linkedin.com/in/alisson-miguelferreira)  
+🐙 [GitHub](https://github.com/alisson-miguelferreira)  

@@ -1,196 +1,838 @@
+/* ===============================================
+   🏰 HE-MAN VS SKELETOR - ROCK PAPER SCISSORS 🏰
+   Epic CSS Theme with Professional Comments
+   Version: 15 (Final Professional Edition)
+   =============================================== */
+
+/* Reset universal - Remove margens e paddings padrão do navegador */
 * {
     box-sizing: border-box;
+    /* Inclui padding e border no cálculo da largura total */
     margin: 0;
     padding: 0;
 }
 
-body {
-    background: url("https://picsum.photos/1600/900?random") no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 20px;
+/* Importação das fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Bangers&display=swap');
+
+/* ===============================================
+   🎨 SISTEMA DE CORES TEMÁTICAS (CSS VARIABLES)
+   Organizadas por facções para manutenção fácil
+   =============================================== */
+:root {
+    /* 🦸 Paleta He-Man - Cores heroicas e douradas */
+    --heman-primary: #FFD700;
+    /* Dourado principal - representa poder */
+    --heman-secondary: #FF4500;
+    /* Laranja vibrante - energia heroica */
+    --heman-accent: #FFA500;
+    /* Laranja médio - detalhes */
+    --heman-light: #FFFF99;
+    /* Amarelo claro - textos claros */
+
+    /* 💀 Paleta Skeletor - Cores místicas e sombrias */
+    --skeletor-primary: #4A0E4E;
+    /* Roxo escuro - poder sombrio */
+    --skeletor-secondary: #8A2BE2;
+    /* Azul-violeta - magia */
+    --skeletor-accent: #6A0DAD;
+    /* Roxo médio - acentos */
+    --skeletor-dark: #2E0831;
+    /* Roxo muito escuro - sombras */
+
+    /* 🏰 Cores neutras do universo - Castelo de Grayskull */
+    --castle-gray: #708090;
+    /* Cinza do castelo */
+    --grayskull-dark: #1C1C1C;
+    /* Preto das sombras */
+    --power-glow: #00FFFF;
+    /* Cyan - poder de Grayskull */
+    --shadow-deep: rgba(0, 0, 0, 0.6);
+    /* Sombra profunda universal */
+
+    /* 🌈 Gradientes pré-definidos para reutilização */
+    --heman-gradient: linear-gradient(135deg, var(--heman-primary) 0%, var(--heman-secondary) 50%, var(--heman-accent) 100%);
+    --skeletor-gradient: linear-gradient(135deg, var(--skeletor-dark) 0%, var(--skeletor-primary) 50%, var(--skeletor-secondary) 100%);
+    --power-gradient: linear-gradient(45deg, var(--power-glow), transparent, var(--power-glow));
 }
 
+/* ===============================================
+   📱 CORPO DA PÁGINA - Background épico
+   =============================================== */
+body {
+    /* Gradiente de fundo representando o conflito entre as forças */
+    background: linear-gradient(135deg,
+            var(--skeletor-dark) 0%,
+            /* Começa com escuridão do Skeletor */
+            var(--castle-gray) 30%,
+            /* Passa pelo cinza neutro do castelo */
+            var(--heman-accent) 70%,
+            /* Evolui para luz do He-Man */
+            var(--heman-primary) 100%);
+    /* Termina com dourado heroico */
+
+    background-attachment: fixed;
+    /* Background fixo durante scroll */
+    min-height: 100vh;
+    /* Altura mínima da viewport */
+    height: 100vh;
+    /* Altura fixa da viewport */
+    padding: 10px;
+    /* Padding para não colar nas bordas */
+    margin: 0;
+    overflow: hidden;
+    /* Remove scrollbars desnecessárias */
+    font-family: 'Cinzel', serif;
+    /* Fonte épica como padrão */
+    display: flex;
+    /* Flexbox para centralização */
+    align-items: center;
+    /* Centralização vertical */
+    justify-content: center;
+    /* Centralização horizontal */
+    position: relative;
+    /* Para pseudo-elementos */
+}
+
+/* Efeito de atmosfera mística com pseudo-elemento */
+body::before {
+    content: '';
+    position: fixed;
+    /* Fixo na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradientes radiais simulando poderes místicos */
+    background:
+        radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.3) 0%, transparent 50%),
+        /* Poder do Skeletor */
+        radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.3) 0%, transparent 50%);
+    /* Poder do He-Man */
+    pointer-events: none;
+    /* Não interfere com interações */
+    z-index: -1;
+    /* Atrás de todo conteúdo */
+}
+
+/* ===============================================
+   🏰 CONTAINER PRINCIPAL - Arena da batalha
+   =============================================== */
 .container {
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Background complexo com múltiplas camadas representando o conflito */
+    background: linear-gradient(135deg,
+            rgba(28, 28, 28, 0.80) 0%,
+            /* Escuridão profunda */
+            rgba(74, 14, 78, 0.75) 25%,
+            /* Poder roxo do Skeletor */
+            rgba(112, 128, 144, 0.70) 50%,
+            /* Neutralidade do castelo */
+            rgba(74, 14, 78, 0.75) 75%,
+            /* Retorno ao poder roxo */
+            rgba(28, 28, 28, 0.80) 100%);
+    /* Volta à escuridão */
+
+    border-radius: 20px;
+    /* Bordas arredondadas suaves */
+    padding: 15px;
+    /* Espaçamento interno otimizado */
+
+    /* Sistema de sombras em camadas para profundidade */
+    box-shadow:
+        0 0 30px var(--power-glow),
+        /* Brilho externo cyan */
+        inset 0 0 20px rgba(255, 215, 0, 0.1),
+        /* Brilho interno dourado */
+        0 8px 32px var(--shadow-deep);
+    /* Sombra profunda */
+
+    /* Layout flexbox para organização vertical */
     display: flex;
     flex-direction: column;
+    /* Elementos empilhados verticalmente */
     align-items: center;
-    gap: 16px;
-    width: min(700px, 92vw);
+    /* Centralização horizontal */
+    justify-content: space-between;
+    /* Distribui espaço uniformemente */
+    gap: 8px;
+    /* Espaçamento entre elementos */
+
+    /* Dimensões responsivas sem overflow */
+    width: min(550px, 95vw);
+    /* Máximo 550px ou 95% da largura da tela */
+    height: min(90vh, 650px);
+    /* Máximo 90% da altura ou 650px */
+
+    /* Configuração de borda para pseudo-elemento */
+    border: 3px solid transparent;
+    /* Borda transparente para o background-clip */
+    background-clip: padding-box;
+    /* Clip do background para não vazar */
+    position: relative;
+    /* Para pseudo-elementos */
+    overflow: hidden;
+    /* Esconde overflow para efeitos */
 }
 
-/* GIF ajustado */
+/* Pseudo-elemento para borda animada colorida */
+.container::before {
+    content: '';
+    position: absolute;
+    /* Posicionamento para cobrir toda a borda */
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+
+    /* Gradiente das cores das facções alternadas */
+    background: linear-gradient(45deg,
+            var(--heman-primary),
+            /* Dourado He-Man */
+            var(--skeletor-secondary),
+            /* Roxo Skeletor */
+            var(--heman-primary));
+    /* Volta ao dourado */
+
+    border-radius: 23px;
+    /* Bordas arredondadas (3px maior que container) */
+    z-index: -1;
+    /* Atrás do container */
+    animation: powerPulse 3s ease-in-out infinite;
+    /* Animação de pulso */
+}
+
+/* Animação de pulso para simular poder místico */
+@keyframes powerPulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    /* Começa e termina com baixa opacidade */
+    50% {
+        opacity: 0.7;
+    }
+
+    /* Pico de intensidade no meio */
+}
+
+/* ===============================================
+   🖼️ IMAGEM/GIF - Moldura épica para personagens
+   =============================================== */
 .container img {
-    max-width: 100%;
-    max-height: 30vh;
-    /* ocupa no máximo 30% da tela */
+    max-width: 170px;
+    /* Tamanho otimizado para visibilidade */
     height: auto;
+    /* Mantém proporção */
     object-fit: contain;
+    /* Ajusta sem distorção */
     display: block;
+    /* Remove espaço inline */
+    margin-bottom: 3px;
+    /* Pequeno espaço inferior */
+    border-radius: 15px;
+    /* Bordas arredondadas */
+    border: 2px solid var(--heman-primary);
+    /* Moldura dourada */
+
+    /* Efeitos de sombra para destaque */
+    box-shadow:
+        0 0 20px var(--power-glow),
+        /* Brilho cyan externo */
+        0 4px 15px var(--shadow-deep);
+    /* Sombra de profundidade */
+
+    /* Melhorias visuais na imagem */
+    filter: brightness(1.1) contrast(1.2);
+    /* Aumenta brilho e contraste */
+    transition: all 0.3s ease;
+    /* Transição suave para hover */
 }
 
-/* títulos */
+/* Efeito hover na imagem - Poder se intensifica */
+.container img:hover {
+    transform: scale(1.05);
+    /* Leve aumento no tamanho */
+    box-shadow:
+        0 0 30px var(--power-glow),
+        /* Brilho mais intenso */
+        0 6px 20px var(--shadow-deep);
+    /* Sombra mais profunda */
+}
+
+/* ===============================================
+   📝 TÍTULOS ÉPICOS - Typography com efeitos de poder
+   =============================================== */
+
+/* Título principal - Nome do jogo */
 h1 {
-    color: #333;
-    font-size: clamp(20px, 4vw, 28px);
+    color: var(--heman-primary);
+    /* Cor dourada heroica */
+    font-size: 1.8rem;
+    /* Tamanho otimizado para container */
+    font-family: 'Cinzel', serif;
+    /* Fonte épica e elegante */
     font-weight: 700;
+    /* Peso bold para impacto */
+
+    /* Sistema de sombras para efeito de brilho mágico */
+    text-shadow:
+        0 0 10px var(--power-glow),
+        /* Brilho cyan base */
+        2px 2px 4px var(--shadow-deep),
+        /* Sombra de profundidade */
+        0 0 20px var(--heman-accent);
+    /* Brilho laranja adicional */
+
+    margin-bottom: 5px;
+    /* Espaço inferior mínimo */
+    text-align: center;
+    /* Centralizado */
+    letter-spacing: 2px;
+    /* Espaçamento entre letras para elegância */
+    text-transform: uppercase;
+    /* Maiúsculas para impacto */
+    animation: titleGlow 2s ease-in-out infinite alternate;
+    /* Animação de brilho */
 }
 
+/* Animação de brilho alternado para o título */
+@keyframes titleGlow {
+    from {
+        text-shadow: 0 0 10px var(--power-glow), 2px 2px 4px var(--shadow-deep);
+    }
+
+    to {
+        text-shadow: 0 0 20px var(--power-glow), 2px 2px 4px var(--shadow-deep), 0 0 30px var(--heman-accent);
+    }
+}
+
+/* Subtítulo - "Escolha sua arma" */
 h2 {
-    color: #555;
-    font-size: clamp(16px, 3vw, 22px);
-    font-weight: 700;
+    color: var(--heman-light);
+    /* Amarelo claro para alta visibilidade */
+    font-size: 1.1rem;
+    /* Tamanho menor que h1 */
+    font-family: 'Cinzel', serif;
+    /* Mantém consistência tipográfica */
+    font-weight: 600;
+    /* Semi-bold */
+
+    /* Efeitos de brilho intensificados para visibilidade */
+    text-shadow:
+        0 0 12px var(--heman-primary),
+        /* Brilho dourado base */
+        2px 2px 4px var(--shadow-deep),
+        /* Sombra de profundidade */
+        0 0 8px var(--heman-accent);
+    /* Brilho laranja adicional */
+
+    margin-bottom: 5px;
+    /* Espaço inferior mínimo */
+    text-align: center;
+    /* Centralizado */
+    letter-spacing: 1px;
+    /* Espaçamento sutil entre letras */
 }
 
-/* botões */
+/* ===============================================
+   🎮 BOTÕES DE BATALHA - Controles épicos
+   =============================================== */
+
+/* Container dos botões - Organização horizontal */
 .button-group {
     display: flex;
+    /* Layout flexbox */
+    gap: 8px;
+    /* Espaçamento entre botões */
+    margin-top: 5px;
+    /* Espaço superior mínimo */
     flex-wrap: wrap;
-    gap: 12px;
+    /* Quebra linha se necessário */
     justify-content: center;
+    /* Centraliza horizontalmente */
 }
 
+/* Estilo base para todos os botões */
 button {
-    padding: 10px 14px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    font-size: clamp(16px, 3vw, 22px);
-    transition: opacity .2s, transform .2s;
-}
-
-button:hover {
-    opacity: .85;
-    transform: translateY(-2px);
-}
-
-#Papel {
-    background: rgba(189, 23, 23, 0.85);
-    color: #fff;
-}
-
-#Pedra {
-    background: rgba(87, 235, 42, 0.85);
-    color: #fff;
-}
-
-#Tesoura {
-    background: rgba(36, 15, 128, 0.85);
-    color: #fff;
-}
-
-/* scores */
-.machine-score,
-.player-score {
-    font-size: clamp(14px, 2.5vw, 18px);
-    font-weight: bold;
-}
-
-#pontuacao-alexa {
-    color: rgb(243, 79, 14);
-}
-
-#pontuacao-jogador {
-    color: rgb(8, 204, 96);
-}
-
-/* input resultado */
-.resultado-score {
-    width: 75%;
-    text-align: center;
-    font-size: clamp(14px, 2.5vw, 18px);
-    font-weight: bold;
-    border: 1px solid #070707;
-    border-radius: 8px;
-    padding: 10px;
-    min-height: 50px;
-    background: #fff;
-}
-
-.reset-btn {
-    margin-top: 20px;
-    padding: 10px 24px;
-    background: linear-gradient(90deg, #0d47a1 60%, #1565c0 100%);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
+    display: flex;
+    /* Flexbox para centralizar conteúdo */
+    justify-content: center;
+    /* Centralização horizontal do texto */
+    align-items: center;
+    /* Centralização vertical do texto */
+    border-radius: 15px;
+    /* Bordas bem arredondadas */
+    padding: 8px 12px;
+    /* Padding interno otimizado */
     font-size: 1.1rem;
-    font-weight: bold;
+    /* Tamanho de fonte legível */
+    font-family: 'Cinzel', serif;
+    /* Mantém fonte épica */
+    font-weight: 600;
+    /* Semi-bold para legibilidade */
     cursor: pointer;
-    box-shadow: 0 2px 6px rgba(33,150,243,0.15);
-    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    /* Cursor de mão para interação */
+    border: 2px solid transparent;
+    /* Borda transparente inicial */
+    color: var(--grayskull-dark);
+    /* Cor do texto padrão */
+
+    /* Sistema de sombras em camadas */
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.3),
+        /* Sombra externa */
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    /* Brilho interno sutil */
+
+    /* Transição suave com curva cubic-bezier para movimento natural */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 100px;
+    /* Largura mínima para consistência */
+    text-transform: uppercase;
+    /* Maiúsculas para impacto */
+    letter-spacing: 1px;
+    /* Espaçamento entre letras */
+    position: relative;
+    /* Para pseudo-elementos */
+    overflow: hidden;
+    /* Esconde efeitos que vazam */
+}
+
+/* Efeito de brilho deslizante nos botões */
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    /* Começa fora da tela à esquerda */
+    width: 100%;
+    height: 100%;
+    /* Gradiente de brilho que passa pelo botão */
+    background: linear-gradient(90deg,
+            transparent,
+            /* Transparente nas bordas */
+            rgba(255, 255, 255, 0.4),
+            /* Branco semi-transparente no centro */
+            transparent);
+    transition: left 0.5s;
+    /* Transição da posição */
+}
+
+/* Ativa o efeito de brilho no hover */
+button:hover::before {
+    left: 100%;
+    /* Move o brilho para fora da tela à direita */
+}
+
+/* Estados de interação dos botões */
+button:hover {
+    transform: translateY(-2px) scale(1.05);
+    /* Move para cima e aumenta */
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.4),
+        /* Sombra mais intensa */
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    /* Brilho interno mais forte */
+}
+
+button:active {
+    transform: translateY(0) scale(0.98);
+    /* Volta à posição e diminui levemente */
+}
+
+/* ===============================================
+   ⚔️ TEMAS ESPECÍFICOS DOS BOTÕES - Poderes das facções
+   =============================================== */
+
+/* Botão Papel - Poder dourado do He-Man */
+#Papel {
+    background: var(--heman-gradient);
+    /* Gradiente heroico */
+    border-color: var(--heman-primary);
+    /* Borda dourada */
+    color: var(--grayskull-dark);
+    /* Texto escuro para contraste */
+}
+
+#Papel:hover {
+    box-shadow:
+        0 8px 25px rgba(255, 215, 0, 0.4),
+        /* Sombra dourada no hover */
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Botão Pedra - Poder sombrio do Skeletor */
+#Pedra {
+    background: var(--skeletor-gradient);
+    /* Gradiente sombrio */
+    border-color: var(--skeletor-primary);
+    /* Borda roxa */
+    color: var(--heman-light);
+    /* Texto claro para contraste */
+}
+
+#Pedra:hover {
+    box-shadow:
+        0 8px 25px rgba(138, 43, 226, 0.4),
+        /* Sombra roxa no hover */
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Botão Tesoura - Poder misto das duas facções */
+#Tesoura {
+    /* Gradiente que combina poderes de ambas as facções */
+    background: linear-gradient(135deg,
+            var(--skeletor-primary) 0%,
+            /* Começa com Skeletor */
+            var(--heman-accent) 50%,
+            /* Mistura com He-Man */
+            var(--skeletor-secondary) 100%);
+    /* Termina com Skeletor */
+    border-color: var(--power-glow);
+    /* Borda cyan do poder de Grayskull */
+    color: white;
+    /* Texto branco para contraste */
+}
+
+#Tesoura:hover {
+    box-shadow:
+        0 8px 25px rgba(0, 255, 255, 0.4),
+        /* Sombra cyan no hover */
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* ===============================================
+   📊 SISTEMA DE PONTUAÇÃO - Scores das facções
+   =============================================== */
+
+/* Pontuação da máquina (Skeletor) */
+.machine-score {
+    font-size: 1.2rem;
+    /* Tamanho legível */
+    margin-top: 8px;
+    /* Espaço superior */
+    font-weight: 600;
+    /* Semi-bold */
+    color: #E6E6FA;
+    /* Lavanda claro para visibilidade */
+
+    /* Efeitos de brilho intensificados para legibilidade */
+    text-shadow:
+        0 0 12px var(--skeletor-secondary),
+        /* Brilho roxo base */
+        2px 2px 4px var(--shadow-deep),
+        /* Sombra de profundidade */
+        0 0 8px var(--power-glow);
+    /* Brilho cyan adicional */
+
+    text-align: center;
+    /* Centralizado */
+    font-family: 'Cinzel', serif;
+    /* Mantém consistência tipográfica */
+}
+
+/* Pontuação do He-Man */
+/* Estilo dos parágrafos de score igual ao h2 */
+.heman-score,
+.skeletor-score {
+    color: var(--heman-light);
+    font-size: 1.1rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    text-shadow:
+        0 0 12px var(--heman-primary),
+        2px 2px 4px var(--shadow-deep),
+        0 0 8px var(--heman-accent);
+    margin-bottom: 5px;
+    text-align: center;
     letter-spacing: 1px;
 }
-.reset-btn:hover {
-    background: linear-gradient(90deg, #1976d2 60%, #2196f3 100%);
-    box-shadow: 0 4px 12px rgba(33,150,243,0.25);
-    transform: scale(1.07) rotate(-2deg);
+
+/* ===============================================
+   🔢 NÚMEROS DA PONTUAÇÃO - Destaque visual
+   =============================================== */
+
+/* Pontuação numérica do Skeletor */
+#pontuacao-skeletor {
+    color: #E6E6FA;
+    /* Lavanda claro para alta visibilidade */
+    font-size: 1.4rem;
+    /* Maior que texto normal */
+    font-weight: 700;
+    /* Bold para destaque */
+
+    /* Sistema de brilho intensificado */
+    text-shadow:
+        0 0 15px var(--skeletor-secondary),
+        /* Brilho roxo intenso */
+        2px 2px 4px var(--shadow-deep),
+        /* Sombra de profundidade */
+        0 0 10px var(--power-glow);
+    /* Brilho cyan adicional */
 }
 
-/* Responsividade para dispositivos mobile */
+/* Pontuação numérica do He-Man */
+#pontuacao-heman {
+    color: var(--heman-primary);
+    /* Dourado heroico */
+    font-size: 1.4rem;
+    /* Maior que texto normal */
+    font-weight: 700;
+    /* Bold para destaque */
+}
+
+/* Pontuação do Esqueleto e do He-Man - estilo igual ao h2 */
+.skeletor-score,
+.heman-score {
+
+    /* Pontuação do Esqueleto e do He-Man - estilo igual ao h2 */
+    .skeletor-score,
+    .heman-score {
+        color: var(--heman-light);
+        font-size: 1.1rem;
+        font-family: 'Cinzel', serif;
+        font-weight: 600;
+        text-shadow:
+            0 0 12px var(--heman-primary),
+            2px 2px 4px var(--shadow-deep),
+            0 0 8px var(--heman-accent);
+        margin-bottom: 5px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+}
+
+/* ===============================================
+   🏆 DISPLAY DE RESULTADO - Arena de batalha
+   =============================================== */
+#resultado-input {
+    font-size: 1.05rem;
+    /* Tamanho grande para destaque */
+    font-weight: 600;
+    /* Semi-bold */
+    color: var(--heman-primary);
+    /* Dourado para destaque */
+    background: linear-gradient(135deg,
+            var(--grayskull-dark) 0%,
+            /* Preto profundo */
+            rgba(28, 28, 28, 0.9) 100%);
+    border: 2px solid var(--power-glow);
+    /* Borda cyan do poder */
+    border-radius: 15px;
+    /* Bordas arredondadas */
+    margin-top: 5px;
+    /* Espaço superior mínimo */
+    text-align: center;
+    /* Texto centralizado */
+    box-shadow:
+        0 0 20px rgba(0, 255, 255, 0.3),
+        /* Brilho externo cyan */
+        inset 0 0 10px rgba(0, 255, 255, 0.1);
+    /* Brilho interno sutil */
+    width: 95%;
+    /* Quase toda largura do container */
+    min-height: 45px;
+    padding: 8px 6px;
+    line-height: 1.25;
+    letter-spacing: 0.5px;
+    /* Altura mínima para consistência */
+    font-family: 'Cinzel', serif;
+    /* Mantém fonte épica */
+    text-shadow: 0 0 8px var(--power-glow);
+    /* Brilho no texto */
+    letter-spacing: 1px;
+    /* Espaçamento entre letras */
+}
+
+/* ===============================================
+   🔄 BOTÃO RESET - Poder de Grayskull
+   =============================================== */
+.reset-btn {
+    margin-top: 5px;
+    /* Espaço superior mínimo */
+    padding: 6px 16px;
+    /* Padding otimizado */
+    background: linear-gradient(135deg,
+            var(--castle-gray) 0%,
+            /* Cinza do castelo */
+            var(--skeletor-dark) 50%,
+            /* Escuridão do Skeletor */
+            var(--castle-gray) 100%);
+    /* Volta ao cinza */
+    color: var(--heman-primary);
+    /* Texto dourado */
+    border: 2px solid var(--power-glow);
+    /* Borda cyan do poder */
+    border-radius: 15px;
+    /* Bordas arredondadas */
+    font-size: 1rem;
+    /* Tamanho padrão */
+    font-family: 'Cinzel', serif;
+    /* Fonte épica */
+    font-weight: 600;
+    /* Semi-bold */
+    cursor: pointer;
+    /* Cursor de interação */
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.3),
+        /* Sombra externa */
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    /* Brilho interno sutil */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Transição suave */
+    letter-spacing: 1px;
+    /* Espaçamento entre letras */
+    text-transform: uppercase;
+    /* Maiúsculas para impacto */
+    position: relative;
+    /* Para pseudo-elementos */
+    overflow: hidden;
+    /* Esconde efeitos que vazam */
+}
+
+/* Efeito de poder pulsante no botão reset */
+.reset-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    /* Centro vertical */
+    left: 50%;
+    /* Centro horizontal */
+    width: 0;
+    /* Começa sem tamanho */
+    height: 0;
+    /* Gradiente radial simulando poder de Grayskull */
+    background: radial-gradient(circle, var(--power-glow), transparent);
+    transition: all 0.3s ease;
+    /* Transição suave */
+    transform: translate(-50%, -50%);
+    /* Centraliza o efeito */
+}
+
+/* Ativa o efeito de poder no hover */
+.reset-btn:hover::before {
+    width: 200px;
+    /* Expande o efeito */
+    height: 200px;
+    opacity: 0.1;
+    /* Opacidade sutil */
+}
+
+/* Estados de interação do botão reset */
+.reset-btn:hover {
+    transform: translateY(-2px);
+    /* Move para cima */
+    box-shadow:
+        0 8px 25px rgba(0, 255, 255, 0.3),
+        /* Sombra cyan mais intensa */
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    /* Brilho interno mais forte */
+    text-shadow: 0 0 10px var(--power-glow);
+    /* Brilho no texto */
+}
+
+/* ===============================================
+   📱 RESPONSIVIDADE MÓVEL - Mantém qualidade épica
+   =============================================== */
 @media (max-width: 600px) {
+
+    /* Reduz padding do body em telas pequenas */
     body {
-        height: auto;
-        min-height: 100vh;
-        padding: 10px;
+        padding: 5px;
     }
 
+    /* Ajustes do container para mobile */
     .container {
-        width: 100%;
-        max-width: 100%;
-        padding: 10px;
-        box-sizing: border-box;
-        margin: 20px auto;
+        width: 95vw;
+        /* 95% da largura da tela */
+        height: 95vh;
+        /* 95% da altura da tela */
+        padding: 15px;
+        /* Mantém padding adequado */
+        gap: 10px;
+        /* Gap ligeiramente maior */
     }
 
+    /* Reduz tamanho da imagem no mobile */
+    .container img {
+        max-width: 150px;
+        /* Menor que desktop */
+        margin-bottom: 5px;
+        /* Espaço inferior maior */
+    }
+
+    /* Ajustes tipográficos para mobile */
     h1 {
-        font-size: 2rem;
-        margin-bottom: 10px;
+        font-size: 1.6rem;
+        /* Menor que desktop */
+        margin-bottom: 5px;
     }
 
     h2 {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
+        font-size: 1rem;
+        /* Menor que desktop */
+        margin-bottom: 5px;
     }
 
+    /* Layout dos botões em coluna no mobile */
     .button-group {
         flex-direction: column;
-        gap: 10px;
+        /* Empilha verticalmente */
+        gap: 8px;
+        /* Mantém gap */
         width: 100%;
+        /* Largura total */
     }
 
+    /* Botões ocupam largura total no mobile */
     button {
-        font-size: 1.5rem;
+        font-size: 1rem;
+        /* Tamanho menor */
         padding: 8px;
+        /* Padding reduzido */
         width: 100%;
+        /* Largura total */
         min-width: 0;
+        /* Remove largura mínima */
         margin: 0;
+        /* Remove margens */
     }
 
-    img {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 10px;
-    }
-
-    .resultado-score,
+    /* Ajustes de pontuação para mobile */
     .machine-score,
     .player-score {
-        font-size: 1.2rem;
-        margin-top: 10px;
-        word-break: break-word;
+        font-size: 1rem;
+        /* Menor que desktop */
+        margin-top: 5px;
+        /* Espaço reduzido */
     }
 
-    input.resultado-score {
+    /* Números da pontuação menores no mobile */
+    #pontuacao-skeletor,
+    #pontuacao-heman {
         font-size: 1.2rem;
-        width: 100%;
-        box-sizing: border-box;
+        /* Menor que desktop */
+    }
+
+    /* Resultado menor no mobile */
+    #resultado-input {
+        font-size: 1.2rem;
+        /* Menor que desktop */
+        min-height: 40px;
+        /* Altura menor */
+        margin-top: 8px;
+        color: var(--heman-light);
+        font-size: 1.1rem;
+        font-family: 'Cinzel',
+            serif;
+        font-weight: 600;
+        text-shadow: 0 0 12px var(--heman-primary),
+            2px 2px 4px var(--shadow-deep),
+            0 0 8px var(--heman-accent);
+        margin-bottom: 5px;
+        text-align: center;
+        letter-spacing: 1px;
     }
 }

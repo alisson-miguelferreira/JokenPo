@@ -1,18 +1,18 @@
 // Função para resetar o resultado e as pontuações
 function resetGame() {
-    humanScore = 0; // Zera pontuação do jogador
-    machineScore = 0; // Zera pontuação da Alexa
-    yourScoreElement.innerHTML = humanScore; // Atualiza placar do jogador
-    machineScoreElement.innerHTML = machineScore; // Atualiza placar da Alexa
+    heManScore = 0; // Zera pontuação do He-Man
+    skeletorScore = 0; // Zera pontuação do Esqueleto
+    heManScoreElement.innerHTML = heManScore; // Atualiza placar do He-Man
+    skeletorScoreElement.innerHTML = skeletorScore; // Atualiza placar do Esqueleto
     document.getElementById('resultado-input').value = ''; // Limpa o resultado
 }
-// Seleciona os elementos do placar corretamente (sem #)
-const yourScoreElement = document.getElementById('pontuacao-jogador'); // Elemento do placar do jogador
-const machineScoreElement = document.getElementById('pontuacao-alexa'); // Elemento do placar da Alexa
+// Seleciona os elementos do placar corretamente
+const heManScoreElement = document.getElementById('pontuacao-heman'); // Elemento do placar do He-Man
+const skeletorScoreElement = document.getElementById('pontuacao-skeletor'); // Elemento do placar do Esqueleto
 
 // Variáveis para armazenar os pontos
-let humanScore = 0; // Pontuação do jogador
-let machineScore = 0; // Pontuação da Alexa
+let heManScore = 0; // Pontuação do He-Man
+let skeletorScore = 0; // Pontuação do Esqueleto
 
 // "ENUM" de opções do jogo: representa as escolhas possíveis
 const GAME_OPTIONS = {
@@ -21,35 +21,35 @@ const GAME_OPTIONS = {
     tesoura: 'Tesoura'
 };
 
-const playHuman = (humanChoice) => { // Função chamada ao clicar em um botão
-    playTheGame(humanChoice, playMachine()); // Executa o jogo passando a escolha do humano e da máquina
+const playHuman = (heManChoice) => { // Função chamada ao clicar em um botão
+    playTheGame(heManChoice, playMachine()); // Executa o jogo passando a escolha do He-Man e do Esqueleto
 }
 
-const playMachine = () => { // Função para gerar jogada aleatória da Alexa
+const playMachine = () => { // Função para gerar jogada aleatória do Esqueleto
     const optionsArray = [GAME_OPTIONS.papel, GAME_OPTIONS.pedra, GAME_OPTIONS.tesoura]; // Array para sorteio
     const randomnumber = Math.floor(Math.random() * optionsArray.length); // Número aleatório entre 0 e 2
-    return optionsArray[randomnumber]; // Retorna a escolha da Alexa
+    return optionsArray[randomnumber]; // Retorna a escolha do Esqueleto
 }
 
-const playTheGame = (human, machine) => { // Função principal do jogo
-    console.log('Jogador: ' + human); // Mostra escolha do jogador no console
-    console.log('Máquina: ' + machine); // Mostra escolha da Alexa no console
+const playTheGame = (heMan, skeletor) => { // Função principal do jogo
+    console.log('He-Man: ' + heMan); // Mostra escolha do He-Man no console
+    console.log('Esqueleto: ' + skeletor); // Mostra escolha do Esqueleto no console
 
-    if (human === machine) { // Se for empate
-        document.getElementById('resultado-input').value = 'Empate!'; // Mostra "Empate!" no input
+    if (heMan === skeletor) { // Se for empate
+        document.getElementById('resultado-input').value = 'Um duelo equilibrado... por enquanto. ⚖️'; // Mensagem de empate
     }
-    else if ( // Se o jogador vencer
-        (human === GAME_OPTIONS.pedra && machine === GAME_OPTIONS.tesoura) || // Pedra vence Tesoura
-        (human === GAME_OPTIONS.tesoura && machine === GAME_OPTIONS.papel) || // Tesoura vence Papel
-        (human === GAME_OPTIONS.papel && machine === GAME_OPTIONS.pedra) // Papel vence Pedra
+    else if (
+        (heMan === GAME_OPTIONS.pedra && skeletor === GAME_OPTIONS.tesoura) ||
+        (heMan === GAME_OPTIONS.tesoura && skeletor === GAME_OPTIONS.papel) ||
+        (heMan === GAME_OPTIONS.papel && skeletor === GAME_OPTIONS.pedra)
     ) {
-        humanScore++; // Incrementa pontuação do jogador
-        yourScoreElement.innerHTML = humanScore; // Atualiza placar do jogador
-        document.getElementById('resultado-input').value = 'Você venceu!'; // Mostra "Você venceu!" no input
+        heManScore++;
+        heManScoreElement.innerHTML = heManScore;
+        document.getElementById('resultado-input').value = 'Pelos poderes de Grayskull, a justiça prevaleceu! ⚡'; // Mensagem de vitória do He-Man
     }
-    else { // Se a Alexa vencer
-        machineScore++; // Incrementa pontuação da Alexa
-        machineScoreElement.innerHTML = machineScore; // Atualiza placar da Alexa
-        document.getElementById('resultado-input').value = 'Você perdeu para a Alexa!'; // Mostra "Você perdeu para a Alexa!" no input
+    else {
+        skeletorScore++;
+        skeletorScoreElement.innerHTML = skeletorScore;
+        document.getElementById('resultado-input').value = 'Você perdeu, tolo! MUAHAHAHA! 💀'; // Mensagem de vitória do Esqueleto
     }
 }

@@ -9,30 +9,39 @@
 </head>
 
 <body>
+    <!-- Vídeo de fundo He-Man vs Esqueleto -->
+    <video autoplay muted loop id="bg-video"
+        style="position:fixed;top:0;left:0;width:100vw;height:100vh;object-fit:cover;z-index:-2;">
+        <source src="assets/He-Man.mp4.mp4" type="video/mp4">
+    </video>
+    <!-- Máscara escura para destacar o container -->
+    <div id="bg-mask"
+        style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(20,20,30,0.65);z-index:-1;"></div>
 
     <div class="container">
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdngzaDFheGkweWx6dnFyMXZ5ZGphc2Y1NDh1M
-    2VxNnpsa25mcHcwMSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/eDoFx9znGCJpiQviAD/giphy.gif" alt="JOKENPÔ">
+        <!-- Imagem temática He-Man vs Esqueleto -->
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXNxZjF3Z2FnYTJkbWRsaGM0ejMzNTVpMWdxa3A4ZmJrZ
+        mgzdXVoeCZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/eDoFx9znGCJpiQviAD/giphy.gif" alt="He-Man vs Esqueleto">
 
-        <h1>JokenPô</h1>
-        <h2>Escolha sua jogada:</h2>
+        <h1>JokenPô: He-Man vs Esqueleto</h1>
+        <h2>Escolha sua arma:</h2>
 
         <div class="button-group">
-            <button id="Papel" onclick="playHuman('Papel')">&#x1f590; Papel</button>
-            <button id="Pedra" onclick="playHuman('Pedra')">&#x1f44A;Pedra</button>
-            <button id="Tesoura" onclick="playHuman('Tesoura')">&#x270C; Tesoura</button>
+            <button id="Papel" onclick="playHuman('Papel')">🛡️ Papel</button>
+            <button id="Pedra" onclick="playHuman('Pedra')">⚔️ Pedra</button>
+            <button id="Tesoura" onclick="playHuman('Tesoura')">💀 Tesoura</button>
         </div>
 
-        <p class="machine-score">Pontuação da Alexa: <span id="pontuacao-alexa">0</span></p>
-        <p class="player-score">Pontuação do Jogador: <span id="pontuacao-jogador">0</span></p>
+        <p class="skeletor-score">Pontuação do Esqueleto: <span id="pontuacao-skeletor">0</span></p>
+        <p class="heman-score">Pontuação do He-Man: <span id="pontuacao-heman">0</span></p>
 
-        <!-- input ajustado para sempre caber -->
         <input type="text" id="resultado-input" class="resultado-score" readonly />
 
-        <button class="reset-btn" onclick="resetGame()">🔄 Resetar Jogo</button>
+        <button class="reset-btn" onclick="resetGame()">⚡ Resetar Batalha</button>
     </div>
 
     <script src="script.js"></script>
+    <script src="video-control.js"></script>
 </body>
 
 </html>

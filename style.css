@@ -818,21 +818,19 @@ button:active {
 
     /* Resultado menor no mobile */
     #resultado-input {
-        font-size: 1.2rem;
-        /* Menor que desktop */
-        min-height: 40px;
-        /* Altura menor */
-        margin-top: 8px;
-        color: var(--heman-light);
-        font-size: 1.1rem;
-        font-family: 'Cinzel',
-            serif;
-        font-weight: 600;
-        text-shadow: 0 0 12px var(--heman-primary),
-            2px 2px 4px var(--shadow-deep),
-            0 0 8px var(--heman-accent);
-        margin-bottom: 5px;
-        text-align: center;
-        letter-spacing: 1px;
+    font-size: 0.95rem;
+    min-height: 38px;
+    margin-top: 8px;
+    color: var(--heman-light);
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    text-shadow: 0 0 8px var(--heman-primary);
+    margin-bottom: 5px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    padding: 6px 4px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
     }
 }

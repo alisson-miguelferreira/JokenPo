@@ -29,7 +29,7 @@ A batalha é simples: pedra, papel ou tesoura decidirão o destino de Eternia!
 ---
 
 ## ▶️ Para Jogar
-1. **[Clique aqui para jogar Jokenpô He-Man online](https://alisson-miguelferreira.github.io/JokenPo/)**  
+1. **[Clique aqui para jogar Jokenpô He-Man online](https://alisson-miguelferreira.github.io/JokenPo-He-Man/)**  
 2. Escolha sua jogada e veja o resultado e o placar atualizado  
 
 ---

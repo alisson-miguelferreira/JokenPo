@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url("https://picsum.photos/1600/900?random") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: min(700px, 92vw);
+}
+
+/* GIF ajustado */
+.container img {
+    max-width: 100%;
+    max-height: 30vh;
+    /* ocupa no máximo 30% da tela */
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* títulos */
+h1 {
+    color: #333;
+    font-size: clamp(20px, 4vw, 28px);
+    font-weight: 700;
+}
+
+h2 {
+    color: #555;
+    font-size: clamp(16px, 3vw, 22px);
+    font-weight: 700;
+}
+
+/* botões */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+button {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: clamp(16px, 3vw, 22px);
+    transition: opacity .2s, transform .2s;
+}
+
+button:hover {
+    opacity: .85;
+    transform: translateY(-2px);
+}
+
+#Papel {
+    background: rgba(189, 23, 23, 0.85);
+    color: #fff;
+}
+
+#Pedra {
+    background: rgba(87, 235, 42, 0.85);
+    color: #fff;
+}
+
+#Tesoura {
+    background: rgba(36, 15, 128, 0.85);
+    color: #fff;
+}
+
+/* scores */
+.machine-score,
+.player-score {
+    font-size: clamp(14px, 2.5vw, 18px);
+    font-weight: bold;
+}
+
+#pontuacao-alexa {
+    color: rgb(243, 79, 14);
+}
+
+#pontuacao-jogador {
+    color: rgb(8, 204, 96);
+}
+
+/* input resultado */
+.resultado-score {
+    width: 75%;
+    text-align: center;
+    font-size: clamp(14px, 2.5vw, 18px);
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    min-height: 50px;
+    background: #fff;
+}
+
+/* Responsividade para dispositivos mobile */
+@media (max-width: 600px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        margin: 20px auto;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    button {
+        font-size: 1.5rem;
+        padding: 8px;
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .resultado-score,
+    .machine-score,
+    .player-score {
+        font-size: 1.2rem;
+        margin-top: 10px;
+        word-break: break-word;
+    }
+
+    input.resultado-score {
+        font-size: 1.2rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>JokenPô</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdngzaDFheGkweWx6dnFyMXZ5ZGphc2Y1NDh1M
+    2VxNnpsa25mcHcwMSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/eDoFx9znGCJpiQviAD/giphy.gif" alt="JOKENPÔ">
+
+        <h1>JokenPô</h1>
+        <h2>Escolha sua jogada:</h2>
+
+        <div class="button-group">
+            <button id="Papel" onclick="playHuman('Papel')">&#x1f44A; Papel</button>
+            <button id="Pedra" onclick="playHuman('Pedra')">&#x1f590; Pedra</button>
+            <button id="Tesoura" onclick="playHuman('Tesoura')">&#x270C; Tesoura</button>
+        </div>
+
+        <p class="machine-score">Pontuação da Alexa: <span id="pontuacao-alexa">0</span></p>
+        <p class="player-score">Pontuação do Jogador: <span id="pontuacao-jogador">0</span></p>
+
+        <!-- input ajustado para sempre caber -->
+        <input type="text" id="resultado-input" class="resultado-score" readonly />
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,22 +1,3 @@
-.reset-btn {
-    margin-top: 20px;
-    padding: 10px 24px;
-    background: linear-gradient(90deg, #2196f3 60%, #1976d2 100%);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(33,150,243,0.15);
-    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-    letter-spacing: 1px;
-}
-.reset-btn:hover {
-    background: linear-gradient(90deg, #1976d2 60%, #2196f3 100%);
-    box-shadow: 0 4px 12px rgba(33,150,243,0.25);
-    transform: scale(1.07) rotate(-2deg);
-}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -126,11 +107,31 @@ button:hover {
     text-align: center;
     font-size: clamp(14px, 2.5vw, 18px);
     font-weight: bold;
-    border: 1px solid #ccc;
+    border: 1px solid #070707;
     border-radius: 8px;
     padding: 10px;
     min-height: 50px;
     background: #fff;
+}
+
+.reset-btn {
+    margin-top: 20px;
+    padding: 10px 24px;
+    background: linear-gradient(90deg, #0d47a1 60%, #1565c0 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(33,150,243,0.15);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    letter-spacing: 1px;
+}
+.reset-btn:hover {
+    background: linear-gradient(90deg, #1976d2 60%, #2196f3 100%);
+    box-shadow: 0 4px 12px rgba(33,150,243,0.25);
+    transform: scale(1.07) rotate(-2deg);
 }
 
 /* Responsividade para dispositivos mobile */

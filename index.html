@@ -18,18 +18,18 @@
         <h2>Escolha sua jogada:</h2>
 
         <div class="button-group">
-            <button id="Papel" onclick="playHuman('Papel')">&#x1f44A; Papel</button>
-            <button id="Pedra" onclick="playHuman('Pedra')">&#x1f590; Pedra</button>
+            <button id="Papel" onclick="playHuman('Papel')">&#x1f590; Papel</button>
+            <button id="Pedra" onclick="playHuman('Pedra')">&#x1f44A;Pedra</button>
             <button id="Tesoura" onclick="playHuman('Tesoura')">&#x270C; Tesoura</button>
         </div>
 
         <p class="machine-score">Pontuação da Alexa: <span id="pontuacao-alexa">0</span></p>
         <p class="player-score">Pontuação do Jogador: <span id="pontuacao-jogador">0</span></p>
 
-    <!-- input ajustado para sempre caber -->
-    <input type="text" id="resultado-input" class="resultado-score" readonly />
+        <!-- input ajustado para sempre caber -->
+        <input type="text" id="resultado-input" class="resultado-score" readonly />
 
-    <button class="reset-btn" onclick="resetGame()">🔄 Resetar Jogo</button>
+        <button class="reset-btn" onclick="resetGame()">🔄 Resetar Jogo</button>
     </div>
 
     <script src="script.js"></script>

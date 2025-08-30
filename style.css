@@ -6,9 +6,9 @@
 
 /* Reset universal - Remove margens e paddings padrão do navegador */
 * {
-    box-sizing: border-box; /* Inclui padding e border no cálculo da largura total */
-    margin: 0; /* Remove margens padrão */
-    padding: 0; /* Remove paddings padrão */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* Importação das fontes do Google Fonts */
@@ -41,35 +41,35 @@
    📱 CORPO DA PÁGINA - Background épico
    =============================================== */
 body {
-    /* Gradiente de fundo representando o conflito entre as forças */
-    background: linear-gradient(135deg, var(--skeletor-dark) 0%, var(--castle-gray) 30%, var(--heman-accent) 70%, var(--heman-primary) 100%); /* Gradiente épico */
-    background-attachment: fixed; /* Background fixo durante scroll */
-    min-height: 100vh; /* Altura mínima da viewport */
-    height: 100vh; /* Altura fixa da viewport */
-    padding: 10px; /* Padding para não colar nas bordas */
-    margin: 0; /* Remove margens */
-    overflow: hidden; /* Remove scrollbars desnecessárias */
-    font-family: 'Cinzel', serif; /* Fonte épica como padrão */
-    display: flex; /* Flexbox para centralização */
-    align-items: center; /* Centralização vertical */
-    justify-content: center; /* Centralização horizontal */
-    position: relative; /* Para pseudo-elementos */
+    /* CONTAINER PRINCIPAL - Arena da batalha */
+    background: linear-gradient(135deg, var(--skeletor-dark) 0%, var(--castle-gray) 30%, var(--heman-accent) 70%, var(--heman-primary) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    height: 100vh;
+    padding: 10px;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Cinzel', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 /* Efeito de atmosfera mística com pseudo-elemento */
 body::before {
-    content: ''; /* Pseudo-elemento vazio */
-    position: fixed; /* Fixo na tela */
-    top: 0; /* Posição superior */
-    left: 0; /* Posição esquerda */
-    width: 100%; /* Largura total */
-    height: 100%; /* Altura total */
+    content: ''; /* Pseudo-elemento vazio usado para efeitos visuais no background */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     /* Gradientes radiais simulando poderes místicos */
     background:
         radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.3) 0%, transparent 50%), /* Poder do Skeletor */
         radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.3) 0%, transparent 50%); /* Poder do He-Man */
-    pointer-events: none; /* Não interfere com interações */
-    z-index: -1; /* Atrás de todo conteúdo */
+    pointer-events: none;
+    z-index: -1;
 }
 
 /* ===============================================
@@ -78,14 +78,14 @@ body::before {
 .container {
     /* Background complexo com múltiplas camadas representando o conflito */
     background: linear-gradient(135deg, rgba(28, 28, 28, 0.95) 0%, rgba(74, 14, 78, 0.9) 25%, rgba(112, 128, 144, 0.85) 50%, rgba(74, 14, 78, 0.9) 75%, rgba(28, 28, 28, 0.95) 100%); /* Fundo arena */
-    border-radius: 20px; /* Bordas arredondadas suaves */
-    padding: 15px; /* Espaçamento interno otimizado */
+    border-radius: 20px; 
+    padding: 15px; 
     box-shadow: 0 0 30px var(--power-glow), inset 0 0 20px rgba(255, 215, 0, 0.1), 0 8px 32px var(--shadow-deep); /* Brilho cyan, dourado, sombra */
-    display: flex; /* Flexbox vertical */
-    flex-direction: column; /* Empilhamento vertical */
-    align-items: center; /* Centralizado horizontal */
-    justify-content: space-between; /* Espaçamento uniforme */
-    gap: 8px; /* Espaço entre elementos */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 8px; 
     width: min(550px, 95vw); /* Máximo 550px ou 95% da largura da tela */
     height: min(90vh, 650px); /* Máximo 90% da altura ou 650px */
     border: 3px solid transparent; /* Borda transparente para o background-clip */
@@ -96,7 +96,7 @@ body::before {
 
 /* Pseudo-elemento para borda animada colorida */
 .container::before {
-    content: ''; /* Pseudo-elemento vazio */
+    content: ''; /* Pseudo-elemento vazio usado para borda animada */
     position: absolute; /* Posicionamento para cobrir toda a borda */
     top: -3px; /* Posição superior compensada */
     left: -3px; /* Posição esquerda compensada */
@@ -109,7 +109,7 @@ body::before {
             var(--skeletor-secondary), /* Roxo Skeletor */
             var(--heman-primary)); /* Volta ao dourado */
 
-    border-radius: 23px; /* Bordas arredondadas (3px maior que container) */
+    border-radius: 23px; 
     z-index: -1; /* Atrás do container */
     animation: powerPulse 3s ease-in-out infinite; /* Animação de pulso */
 }
@@ -117,10 +117,10 @@ body::before {
 /* Animação de pulso para simular poder místico */
 @keyframes powerPulse {
     0%, 100% { 
-        opacity: 0.3; /* Começa e termina com baixa opacidade */
+        opacity: 0.3; 
     }
     50% { 
-        opacity: 0.7; /* Pico de intensidade no meio */
+        opacity: 0.7; 
     }
 }
 
@@ -128,12 +128,12 @@ body::before {
    🖼️ IMAGEM/GIF - Moldura épica para personagens
    =============================================== */
 .container img {
-    max-width: 170px; /* Tamanho otimizado para visibilidade */
-    height: auto; /* Mantém proporção */
+    max-width: 170px; 
+    height: auto; 
     object-fit: contain; /* Ajusta sem distorção */
-    display: block; /* Remove espaço inline */
-    margin-bottom: 3px; /* Pequeno espaço inferior */
-    border-radius: 15px; /* Bordas arredondadas */
+    display: block; 
+    margin-bottom: 3px; 
+    border-radius: 15px; 
     border: 2px solid var(--heman-primary); /* Moldura dourada */
     box-shadow: 0 0 20px var(--power-glow), 0 4px 15px var(--shadow-deep); /* Brilho cyan externo, sombra de profundidade */
     filter: brightness(1.1) contrast(1.2); /* Aumenta brilho e contraste */
@@ -152,14 +152,14 @@ body::before {
 
 /* Título principal - Nome do jogo */
 h1 {
-    color: var(--heman-primary); /* Cor dourada heroica */
-    font-size: 1.8rem; /* Tamanho otimizado para container */
-    font-family: 'Cinzel', serif; /* Fonte épica e elegante */
-    font-weight: 700; /* Peso bold para impacto */
+    color: var(--heman-primary); 
+    font-size: 1.8rem; 
+    font-family: 'Cinzel', serif; 
+    font-weight: 700; 
     text-shadow: 0 0 10px var(--power-glow), 2px 2px 4px var(--shadow-deep), 0 0 20px var(--heman-accent); /* Brilho cyan, sombra, laranja */
-    margin-bottom: 5px; /* Espaço inferior mínimo */
-    text-align: center; /* Centralizado */
-    letter-spacing: 2px; /* Espaçamento entre letras para elegância */
+    margin-bottom: 5px; 
+    text-align: center; 
+    letter-spacing: 2px; 
     text-transform: uppercase; /* Maiúsculas para impacto */
     animation: titleGlow 2s ease-in-out infinite alternate; /* Animação de brilho */
 }
@@ -181,9 +181,9 @@ h2 {
     font-family: 'Cinzel', serif; /* Mantém consistência tipográfica */
     font-weight: 600; /* Semi-bold */
     text-shadow: 0 0 12px var(--heman-primary), 2px 2px 4px var(--shadow-deep), 0 0 8px var(--heman-accent); /* Brilho dourado, sombra, laranja */
-    margin-bottom: 5px; /* Espaço inferior mínimo */
-    text-align: center; /* Centralizado */
-    letter-spacing: 1px; /* Espaçamento sutil entre letras */
+    margin-bottom: 5px; 
+    text-align: center; 
+    letter-spacing: 1px; 
 }
 
 /* ===============================================
@@ -192,43 +192,43 @@ h2 {
 
 /* Container dos botões - Organização horizontal */
 .button-group {
-    display: flex; /* Layout flexbox */
-    gap: 8px; /* Espaçamento entre botões */
-    margin-top: 5px; /* Espaço superior mínimo */
+    display: flex; 
+    gap: 8px; 
+    margin-top: 5px; 
     flex-wrap: wrap; /* Quebra linha se necessário */
-    justify-content: center; /* Centraliza horizontalmente */
+    justify-content: center; 
 }
 
 /* Estilo base para todos os botões */
 button {
-    display: flex; /* Flexbox centralizado */
-    justify-content: center; /* Centralização horizontal */
-    align-items: center; /* Centralização vertical */
-    border-radius: 15px; /* Bordas bem arredondadas */
-    padding: 8px 12px; /* Padding interno otimizado */
-    font-size: 1.1rem; /* Tamanho de fonte legível */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    border-radius: 15px; 
+    padding: 8px 12px; 
+    font-size: 1.1rem; 
     font-family: 'Cinzel', serif; /* Mantém fonte épica */
     font-weight: 600; /* Semi-bold para legibilidade */
-    cursor: pointer; /* Cursor de mão para interação */
+    cursor: pointer; 
     border: 2px solid transparent; /* Borda transparente inicial */
-    color: var(--grayskull-dark); /* Cor do texto padrão */
+    color: var(--grayskull-dark); 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2); /* Sombra externa, brilho interno */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transição suave */
-    min-width: 100px; /* Largura mínima para consistência */
+    min-width: 100px; 
     text-transform: uppercase; /* Maiúsculas para impacto */
-    letter-spacing: 1px; /* Espaçamento entre letras */
-    position: relative; /* Para pseudo-elementos */
+    letter-spacing: 1px; 
+    position: relative; 
     overflow: hidden; /* Esconde efeitos que vazam */
 }
 
 /* Efeito de brilho deslizante nos botões */
 button::before {
-    content: ''; /* Pseudo-elemento vazio */
-    position: absolute; /* Posicionamento absoluto */
-    top: 0; /* Posição superior */
+    content: ''; /* Pseudo-elemento vazio usado para efeito de brilho nos botões */
+    position: absolute; 
+    top: 0; 
     left: -100%; /* Começa fora da tela à esquerda */
-    width: 100%; /* Largura total */
-    height: 100%; /* Altura total */
+    width: 100%;
+    height: 100%; 
     /* Gradiente de brilho que passa pelo botão */
     background: linear-gradient(90deg,
             transparent, /* Transparente nas bordas */
@@ -304,26 +304,26 @@ button:active {
 
 /* Pontuação da máquina (Skeletor) */
 .skeletor-score {
-    color: #E6E6FA; /* Lavanda claro para visibilidade */
-    font-size: 1.1rem; /* Tamanho do h2 */
-    font-family: 'Cinzel', serif; /* Fonte do h2 */
-    font-weight: 600; /* Peso do h2 */
-    text-shadow: 0 0 12px var(--skeletor-secondary), 2px 2px 4px var(--shadow-deep), 0 0 8px var(--power-glow); /* Brilho roxo base, sombra, brilho cyan */
-    margin-bottom: 5px; /* Espaço inferior mínimo */
-    text-align: center; /* Centralizado */
-    letter-spacing: 1px; /* Espaçamento do h2 */
+    color: #E6E6FA;
+    font-size: 1.1rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    text-shadow: 0 0 12px var(--skeletor-secondary), 2px 2px 4px var(--shadow-deep), 0 0 8px var(--power-glow);
+    margin-bottom: 5px;
+    text-align: center;
+    letter-spacing: 1px;
 }
 
 /* Pontuação do jogador (He-Man) */
 .heman-score {
-    color: var(--heman-light); /* Amarelo claro para visibilidade */
-    font-size: 1.1rem; /* Tamanho do h2 */
-    font-family: 'Cinzel', serif; /* Fonte do h2 */
-    font-weight: 600; /* Peso do h2 */
-    text-shadow: 0 0 12px var(--heman-primary), 2px 2px 4px var(--shadow-deep), 0 0 8px var(--heman-accent); /* Brilho dourado, sombra, laranja */
-    margin-bottom: 5px; /* Espaço inferior mínimo */
-    text-align: center; /* Centralizado */
-    letter-spacing: 1px; /* Espaçamento do h2 */
+    color: var(--heman-light);
+    font-size: 1.1rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    text-shadow: 0 0 12px var(--heman-primary), 2px 2px 4px var(--shadow-deep), 0 0 8px var(--heman-accent);
+    margin-bottom: 5px;
+    text-align: center;
+    letter-spacing: 1px;
 }
 
 /* ===============================================
@@ -332,64 +332,64 @@ button:active {
 
 /* Pontuação numérica do Skeletor */
 #pontuacao-skeletor {
-    color: #E6E6FA; /* Lavanda claro para alta visibilidade */
-    font-size: 1.4rem; /* Maior que texto normal */
-    font-weight: 700; /* Bold para destaque */
-    text-shadow: 0 0 15px var(--skeletor-secondary), 2px 2px 4px var(--shadow-deep), 0 0 10px var(--power-glow); /* Brilho roxo intenso, sombra, brilho cyan */
+    color: #E6E6FA;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-shadow: 0 0 15px var(--skeletor-secondary), 2px 2px 4px var(--shadow-deep), 0 0 10px var(--power-glow);
 }
 
 /* Pontuação numérica do He-Man */
 #pontuacao-heman {
-    color: var(--heman-primary); /* Dourado heroico */
-    font-size: 1.4rem; /* Maior que texto normal */
-    font-weight: 700; /* Bold para destaque */
-    text-shadow: 0 0 12px var(--heman-accent), 2px 2px 4px var(--shadow-deep); /* Brilho laranja, sombra */
+    color: var(--heman-primary);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-shadow: 0 0 12px var(--heman-accent), 2px 2px 4px var(--shadow-deep);
 }
 
 /* ===============================================
   🏆 DISPLAY DE RESULTADO - Arena de batalha
   =============================================== */
 #resultado-input {
-  font-size: 1.4rem; /* Tamanho da fonte do resultado */
-  font-weight: 600; /* Peso semi-bold */
-  color: var(--heman-primary); /* Cor dourada heroica */
-  background: linear-gradient(135deg, var(--grayskull-dark) 0%, rgba(28, 28, 28, 0.9) 100%); /* Gradiente escuro */
-  border: 2px solid var(--power-glow); /* Borda cyan */
-  border-radius: 15px; /* Bordas arredondadas */
-  margin-top: 5px; /* Espaço superior */
-  text-align: center; /* Texto centralizado */
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), inset 0 0 10px rgba(0, 255, 255, 0.1); /* Sombra externa e interna cyan */
-  width: 95%; /* Largura quase total */
-  min-height: 45px; /* Altura mínima */
-  padding: 5px; /* Padding interno */
-  font-family: 'Cinzel', serif; /* Fonte épica */
-  text-shadow: 0 0 8px var(--power-glow); /* Brilho cyan no texto */
-  letter-spacing: 1px; /* Espaçamento entre letras */
-  resize: none; /* Remove redimensionamento */
-  white-space: pre-wrap; /* Preserva quebras de linha */
-  max-height: 180px; /* Altura máxima */
-  display: block; /* Display em bloco */
-  line-height: 1.3; /* Altura da linha */
-  word-break: break-word; /* Quebra palavras longas */
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--heman-primary);
+    background: linear-gradient(135deg, var(--grayskull-dark) 0%, rgba(28, 28, 28, 0.9) 100%);
+    border: 2px solid var(--power-glow);
+    border-radius: 15px;
+    margin-top: 5px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), inset 0 0 10px rgba(0, 255, 255, 0.1);
+    width: 95%;
+    min-height: 45px;
+    padding: 5px;
+    font-family: 'Cinzel', serif;
+    text-shadow: 0 0 8px var(--power-glow);
+    letter-spacing: 1px;
+    resize: none;
+    white-space: pre-wrap;
+    max-height: 180px;
+    display: block;
+    line-height: 1.3;
+    word-break: break-word;
 }
 
 /* ===============================================
    🔄 BOTÃO RESET - Poder de Grayskull
    =============================================== */
 .reset-btn {
-    margin-top: 5px; /* Espaço superior mínimo */
-    padding: 6px 16px; /* Padding otimizado */
+    margin-top: 5px; 
+    padding: 6px 16px; 
     background: linear-gradient(135deg, var(--castle-gray) 0%, var(--skeletor-dark) 50%, var(--castle-gray) 100%); /* Gradiente castelo neutro */
     color: var(--heman-primary); /* Texto dourado */
     border: 2px solid var(--power-glow); /* Borda cyan do poder */
-    border-radius: 15px; /* Bordas arredondadas */
-    font-size: 1rem; /* Tamanho padrão */
+    border-radius: 15px; 
+    font-size: 1rem; 
     font-family: 'Cinzel', serif; /* Fonte épica */
-    font-weight: 600; /* Semi-bold */
-    cursor: pointer; /* Cursor de interação */
+    font-weight: 600; 
+    cursor: pointer; 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1); /* Sombra externa, brilho interno */
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transição suave */
-    letter-spacing: 1px; /* Espaçamento entre letras */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+    letter-spacing: 1px; 
     text-transform: uppercase; /* Maiúsculas para impacto */
     position: relative; /* Para pseudo-elementos */
     overflow: hidden; /* Esconde efeitos que vazam */
@@ -397,12 +397,12 @@ button:active {
 
 /* Efeito de poder pulsante no botão reset */
 .reset-btn::before {
-    content: ''; /* Pseudo-elemento vazio */
-    position: absolute; /* Posicionamento absoluto */
-    top: 50%; /* Centro vertical */
-    left: 50%; /* Centro horizontal */
-    width: 0; /* Começa sem tamanho */
-    height: 0; /* Começa sem tamanho */
+    content: ''; /* Pseudo-elemento vazio usado para efeito pulsante do botão reset */
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    width: 0; 
+    height: 0; 
     /* Gradiente radial simulando poder de Grayskull */
     background: radial-gradient(circle, var(--power-glow), transparent); /* Gradiente radial cyan */
     transition: all 0.3s ease; /* Transição suave */
@@ -411,9 +411,9 @@ button:active {
 
 /* Ativa o efeito de poder no hover */
 .reset-btn:hover::before {
-    width: 200px; /* Expande o efeito */
-    height: 200px; /* Expande o efeito */
-    opacity: 0.1; /* Opacidade sutil */
+    width: 200px; 
+    height: 200px; 
+    opacity: 0.1; 
 }
 
 /* Estados de interação do botão reset */
@@ -431,74 +431,70 @@ button:active {
     =============================================== */
 @media (max-width: 600px) {
 
-    /* Reduz padding do body em telas pequenas */
+ 
     body {
-        padding: 5px; /* Padding reduzido para mobile */
+        padding: 5px; 
         overflow-y: auto; /* Permite scroll vertical se o conteúdo exceder a tela */
-        height: auto; /* Altura automática para evitar cortes */
+        height: auto; 
     }
 
     /* Adaptações do container principal */
     .container {
-        width: 95vw; /* Largura quase total da viewport */
-        height: auto; /* Altura automática para se adaptar ao conteúdo */
-        max-height: 98vh; /* Altura máxima para evitar que ocupe a tela inteira */
-        padding: 15px; /* Padding interno */
-        gap: 10px; /* Espaçamento entre elementos */
-        justify-content: center; /* Garante que o conteúdo permaneça no centro */
+        width: 95vw; 
+        height: auto; 
+        max-height: 98vh; 
+        padding: 15px; 
+        gap: 10px; 
+        justify-content: center; 
     }
 
-    /* Reduz o tamanho da imagem para caber na tela */
+    
     .container img {
-        max-width: 150px; /* Tamanho reduzido da imagem */
+        max-width: 150px; 
         margin-bottom: 5px; /* Espaço inferior */
     }
 
-    /* Redução dos tamanhos de fonte para os títulos */
+   
     h1 {
-        font-size: 1.6rem; /* Tamanho reduzido do título */
-        margin-bottom: 5px; /* Espaço inferior */
+        font-size: 1.6rem; 
+        margin-bottom: 5px; 
     }
 
     h2 {
-        font-size: 1rem; /* Tamanho reduzido do subtítulo */
-        margin-bottom: 5px; /* Espaço inferior */
+        font-size: 1rem; 
+        margin-bottom: 5px; 
     }
 
-    /* Altera o layout dos botões para vertical */
     .button-group {
-        flex-direction: column; /* Layout vertical para melhor usabilidade */
-        gap: 8px; /* Espaçamento entre botões */
-        width: 100%; /* Largura total */
+        flex-direction: column; 
+        gap: 8px; 
+        width: 100%; 
     }
 
-    /* Ajusta o estilo dos botões */
     button {
-        font-size: 1rem; /* Tamanho reduzido da fonte */
-        padding: 10px 15px; /* Padding ajustado */
-        width: 100%; /* Largura total para facilitar o clique */
-        min-width: 0; /* Remove largura mínima */
-        margin: 0; /* Remove margens */
+        font-size: 1rem; 
+        padding: 10px 15px; 
+        width: 100%; 
+        min-width: 0; 
+        margin: 0; 
     }
 
-    /* Redução dos tamanhos de fonte para a pontuação */
     .skeletor-score,
     .heman-score {
-        font-size: 1rem; /* Tamanho reduzido da fonte */
-        margin-top: 5px; /* Espaço superior */
+        font-size: 1rem; 
+        margin-top: 5px; 
     }
 
     #pontuacao-skeletor,
     #pontuacao-heman {
-        font-size: 1.2rem; /* Tamanho reduzido dos números */
+        font-size: 1.2rem; 
     }
 
-    /* Otimiza o campo de resultado para telas menores */
     #resultado-input {
-        font-size: 1.2rem; /* Tamanho reduzido da fonte */
-        min-height: 60px; /* Altura mínima maior para mobile */
-        max-height: 200px; /* Altura máxima para evitar que ocupe muito espaço */
-        margin-top: 8px; /* Espaço superior */
+        font-size: 1.2rem; 
+        min-height: 60px; 
+        max-height: 200px; 
+        margin-top: 8px; 
         overflow-y: auto; /* Permite scroll se o texto for muito longo */
         resize: none; /* Remove redimensionamento */
     }
@@ -519,7 +515,7 @@ button:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999; /* sempre acima do jogo */
+    z-index: 999;
 }
 
 /* Conteúdo central da saudação */
@@ -550,14 +546,14 @@ button:active {
 
 /* Título da saudação */
 p {
-    color: var(--heman-light); /* Amarelo claro para alta visibilidade */
-    font-size: 1.1rem; /* Tamanho menor que h1 */
-    font-family: 'Cinzel', serif; /* Mantém consistência tipográfica */
-    font-weight: 600; /* Semi-bold */
+    color: var(--heman-light); /* Amarelo claro */
+    font-size: 1.1rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
     text-shadow: 0 0 12px var(--heman-primary), 2px 2px 4px var(--shadow-deep), 0 0 8px var(--heman-accent); /* Brilho dourado, sombra, laranja */
-    margin-top: 18px; /* Espaço acima do parágrafo */
-    margin-bottom: 24px; /* Espaço abaixo do parágrafo */
-    text-align: center; /* Centralizado */
+    margin-top: 18px;
+    margin-bottom: 24px;
+    text-align: center;
     letter-spacing: 1px;
 }
 /* Botão de começar batalha */
@@ -566,7 +562,6 @@ p {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    /* mantém o restante dos estilos do botão */
     padding: 6px 16px;
     background: linear-gradient(135deg, var(--castle-gray) 0%, var(--skeletor-dark) 50%, var(--castle-gray) 100%);
     color: var(--heman-primary);

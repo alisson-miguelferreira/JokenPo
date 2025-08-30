@@ -503,3 +503,128 @@ button:active {
         resize: none; /* Remove redimensionamento */
     }
 }
+
+/* ==============================
+   SAUDAÇÃO HE-MAN - OVERLAY
+   ============================== */
+
+/* Overlay da saudação */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 15, 15, 0.95); /* fundo escuro semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* sempre acima do jogo */
+}
+
+/* Conteúdo central da saudação */
+.saudacao-content {
+    text-align: center;
+    color: #fff;
+    max-width: 500px;
+    padding: 20px;
+    background: #222;
+    border: 3px solid #f4d03f;
+    border-radius: 20px;
+    box-shadow: 0 0 25px #f1c40f;
+}
+
+/* Imagem do He-Man */
+.heman-img {
+    max-width: 250px;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+/* Animação de leve "pulse" na imagem */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Título da saudação */
+p {
+    color: var(--heman-light); /* Amarelo claro para alta visibilidade */
+    font-size: 1.1rem; /* Tamanho menor que h1 */
+    font-family: 'Cinzel', serif; /* Mantém consistência tipográfica */
+    font-weight: 600; /* Semi-bold */
+    text-shadow: 0 0 12px var(--heman-primary), 2px 2px 4px var(--shadow-deep), 0 0 8px var(--heman-accent); /* Brilho dourado, sombra, laranja */
+    margin-top: 18px; /* Espaço acima do parágrafo */
+    margin-bottom: 24px; /* Espaço abaixo do parágrafo */
+    text-align: center; /* Centralizado */
+    letter-spacing: 1px;
+}
+/* Botão de começar batalha */
+.saudacao-content button {
+    margin-top: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* mantém o restante dos estilos do botão */
+    padding: 6px 16px;
+    background: linear-gradient(135deg, var(--castle-gray) 0%, var(--skeletor-dark) 50%, var(--castle-gray) 100%);
+    color: var(--heman-primary);
+    border: 2px solid var(--power-glow);
+    border-radius: 15px;
+    font-size: 1rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+.saudacao-content button:hover {
+    background: #ffeb3b;
+    transform: scale(1.05);
+}
+
+/* ==============================
+   RESPONSIVIDADE MÓVEL PARA SAUDAÇÃO
+   ============================== */
+@media (max-width: 600px) {
+    .saudacao-content {
+        max-width: 98vw;
+        width: 100%;
+        padding: 8vw 3vw;
+        box-sizing: border-box;
+        border-radius: 12px;
+    }
+
+    .heman-img {
+        max-width: 60vw;
+        width: 100%;
+        height: auto;
+        margin-bottom: 12px;
+    }
+
+    .saudacao-content h1 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+
+    .saudacao-content p {
+        font-size: 0.95rem;
+        margin-top: 12px;
+        margin-bottom: 18px;
+    }
+
+    .saudacao-content button {
+        font-size: 1rem;
+        padding: 10px 0;
+        width: 100%;
+        min-width: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

@@ -9,6 +9,24 @@
 </head>
 
 <body>
+
+    <!-- BLOCO DA SAUDAÇÃO -->
+    <div id="saudacao" class="overlay">
+        <div class="saudacao-content">
+            <!-- Troque pelo He-Man que preferir -->
+            <img src="assets/He-Man_saudação.png" alt="He-Man Saudação" class="heman-img">
+
+            <h1>💪 Bem-vindo ao Jokenpô Épico! 💥</h1>
+            <p>He-Man precisa de você! Juntos, enfrentem Skeletor e protejam Eternia da escuridão!</p>
+            <button class="reset-btn" onclick="fecharSaudacao()">⚔️ Começar Batalha</button>
+        </div>
+    </div>
+
+    <!-- ÁUDIO DA SAUDAÇÃO -->
+    <audio id="heman-audio" preload="auto">
+        <source src="assets/HE-Man audio.mp3" type="audio/mpeg">
+    </audio>
+
     <!-- Vídeo de fundo He-Man vs Esqueleto -->
     <video autoplay muted loop id="bg-video"
         style="position:fixed;top:0;left:0;width:100vw;height:100vh;object-fit:cover;z-index:-2;">
@@ -39,10 +57,12 @@
 
         <button class="reset-btn" onclick="resetGame()">⚡ Resetar Batalha</button>
     </div>
-    
+
     <script src="script.js"></script>
     <script src="video-control.js"></script>
     <script src="input-control.js"></script>
+    <script src="saudacao.js"></script> <!-- novo JS só para saudação -->
+
 </body>
 
 </html>

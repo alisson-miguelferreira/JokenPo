@@ -8,6 +8,7 @@ resultadoInput.addEventListener('input', () => {
     // Reseta a altura para calcular corretamente
     resultadoInput.style.height = 'auto';
     // Define a altura conforme o conteúdo
+    // 'px' significa pixels, unidade de medida usada para definir a altura do textarea de acordo com o conteúdo.
     resultadoInput.style.height = resultadoInput.scrollHeight + 'px';
 });
 

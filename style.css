@@ -1,7 +1,7 @@
 /* ===============================================
    🏰 HE-MAN VS SKELETOR - ROCK PAPER SCISSORS 🏰
    Epic CSS Theme with Professional Comments
-   Version: 15 (Final Professional Edition)
+   Version: Final Professional Edition
    =============================================== */
 
 /* Reset universal - Remove margens e paddings padrão do navegador */
@@ -426,27 +426,35 @@ button:active {
 }
 
 /* ===============================================
-   📱 RESPONSIVIDADE MÓVEL - Mantém qualidade épica
-   =============================================== */
+    📱 RESPONSIVIDADE MÓVEL - Mantém qualidade épica
+    Otimizado para telas de até 600px de largura
+    =============================================== */
 @media (max-width: 600px) {
 
     /* Reduz padding do body em telas pequenas */
     body {
         padding: 5px; /* Padding reduzido para mobile */
+        overflow-y: auto; /* Permite scroll vertical se o conteúdo exceder a tela */
+        height: auto; /* Altura automática para evitar cortes */
     }
 
+    /* Adaptações do container principal */
     .container {
         width: 95vw; /* Largura quase total da viewport */
-        height: 95vh; /* Altura quase total da viewport */
+        height: auto; /* Altura automática para se adaptar ao conteúdo */
+        max-height: 98vh; /* Altura máxima para evitar que ocupe a tela inteira */
         padding: 15px; /* Padding interno */
         gap: 10px; /* Espaçamento entre elementos */
+        justify-content: center; /* Garante que o conteúdo permaneça no centro */
     }
 
+    /* Reduz o tamanho da imagem para caber na tela */
     .container img {
         max-width: 150px; /* Tamanho reduzido da imagem */
         margin-bottom: 5px; /* Espaço inferior */
     }
 
+    /* Redução dos tamanhos de fonte para os títulos */
     h1 {
         font-size: 1.6rem; /* Tamanho reduzido do título */
         margin-bottom: 5px; /* Espaço inferior */
@@ -457,20 +465,23 @@ button:active {
         margin-bottom: 5px; /* Espaço inferior */
     }
 
+    /* Altera o layout dos botões para vertical */
     .button-group {
-        flex-direction: column; /* Layout vertical */
+        flex-direction: column; /* Layout vertical para melhor usabilidade */
         gap: 8px; /* Espaçamento entre botões */
         width: 100%; /* Largura total */
     }
 
+    /* Ajusta o estilo dos botões */
     button {
         font-size: 1rem; /* Tamanho reduzido da fonte */
-        padding: 8px; /* Padding reduzido */
-        width: 100%; /* Largura total */
+        padding: 10px 15px; /* Padding ajustado */
+        width: 100%; /* Largura total para facilitar o clique */
         min-width: 0; /* Remove largura mínima */
         margin: 0; /* Remove margens */
     }
 
+    /* Redução dos tamanhos de fonte para a pontuação */
     .skeletor-score,
     .heman-score {
         font-size: 1rem; /* Tamanho reduzido da fonte */
@@ -482,16 +493,13 @@ button:active {
         font-size: 1.2rem; /* Tamanho reduzido dos números */
     }
 
+    /* Otimiza o campo de resultado para telas menores */
     #resultado-input {
         font-size: 1.2rem; /* Tamanho reduzido da fonte */
-        height: auto; /* Altura automática */
         min-height: 60px; /* Altura mínima maior para mobile */
-        max-height: 300px; /* Permite expandir mais no mobile */
+        max-height: 200px; /* Altura máxima para evitar que ocupe muito espaço */
         margin-top: 8px; /* Espaço superior */
-        white-space: pre-wrap; /* Preserva quebras de linha */
-        overflow: hidden; /* Esconde overflow */
+        overflow-y: auto; /* Permite scroll se o texto for muito longo */
         resize: none; /* Remove redimensionamento */
-        line-height: 1.3; /* Altura da linha */
-        word-break: break-word; /* Quebra palavras longas */
     }
 }

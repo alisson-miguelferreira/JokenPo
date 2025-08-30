@@ -5,6 +5,7 @@ function resetGame() {
     heManScoreElement.innerHTML = heManScore; // Atualiza placar do He-Man
     skeletorScoreElement.innerHTML = skeletorScore; // Atualiza placar do Esqueleto
     document.getElementById('resultado-input').value = ''; // Limpa o resultado
+    autoResizeResultado(); // Ajusta altura do textarea
 }
 // Seleciona os elementos do placar corretamente
 const heManScoreElement = document.getElementById('pontuacao-heman'); // Elemento do placar do He-Man
@@ -37,6 +38,7 @@ const playTheGame = (heMan, skeletor) => { // Função principal do jogo
 
     if (heMan === skeletor) { // Se for empate
         document.getElementById('resultado-input').value = 'Um duelo equilibrado... por enquanto. ⚖️'; // Mensagem de empate
+        autoResizeResultado(); // Ajusta altura do textarea
     }
     else if (
         (heMan === GAME_OPTIONS.pedra && skeletor === GAME_OPTIONS.tesoura) ||
@@ -46,10 +48,24 @@ const playTheGame = (heMan, skeletor) => { // Função principal do jogo
         heManScore++;
         heManScoreElement.innerHTML = heManScore;
         document.getElementById('resultado-input').value = 'Pelos poderes de Grayskull, a justiça prevaleceu! ⚡'; // Mensagem de vitória do He-Man
+        autoResizeResultado(); // Ajusta altura do textarea
     }
     else {
         skeletorScore++;
         skeletorScoreElement.innerHTML = skeletorScore;
         document.getElementById('resultado-input').value = 'Você perdeu, tolo! MUAHAHAHA! 💀'; // Mensagem de vitória do Esqueleto
+        autoResizeResultado(); // Ajusta altura do textarea
+    }
+    // Função para auto-resize do textarea resultado
+    function autoResizeResultado() {
+        const resultadoInput = document.getElementById('resultado-input');
+        resultadoInput.style.height = 'auto';
+        resultadoInput.style.overflowY = 'hidden'; // Remove rolagem vertical
+        // Adiciona padding extra para frases longas
+        resultadoInput.style.paddingTop = '12px';
+        resultadoInput.style.paddingBottom = '12px';
+        resultadoInput.style.height = resultadoInput.scrollHeight + 'px';
+        // Garante que o texto fique perfeitamente enquadrado
+        resultadoInput.scrollTop = 0;
     }
 }
